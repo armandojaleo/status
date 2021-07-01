@@ -6,6 +6,18 @@
   <title>Status</title>
 </head>
 <body>
+  <canvas data-type="linear-gauge"
+    data-width="160"
+    data-height="600"
+    data-border-radius="20"
+    data-borders="0"
+    data-bar-stroke-width="20"
+    data-minor-ticks="10"
+    data-major-ticks="0,10,20,30,40,50,60,70,80,90,100"
+    data-value="22.3"
+    data-units="°C"
+    data-color-value-box-shadow="false"
+  ></canvas>
   <script src="https://cdn.jsdelivr.net/npm/canvas-gauges@2.1.7/gauge.min.js" integrity="sha256-RLCkrFTguYA3HoeI986CFdq1ohgc2kYPw0Qna1A4WQQ=" crossorigin="anonymous"></script>
   <script>
     var gauge = new LinearGauge({
