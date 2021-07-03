@@ -87,15 +87,15 @@
 			</div>
 			<div class="col-sm-2 pt-4 pb-3 align-items-center mx-auto">
 				<canvas id="temperature" data-type="linear-gauge" data-width="60" data-height="200" data-units="°C"
-					data-min-value="-10" data-start-angle="90" data-ticks-angle="180" data-value-box="true"
-					data-max-value="45" data-major-ticks="-10,-5,0,5,10,15,20,25,30,35,40,45" data-minor-ticks="5"
+					data-min-value="-10" data-value-box="true"
+					data-max-value="45" data-major-ticks="-10,-5,0,5,10,15,20,25,30,35,40,45" data-minor-ticks="4"
 					data-stroke-ticks="true"
-					data-highlights='[ {"from": 35, "to": 45, "color": "rgba(200, 50, 50, .75)"} ]'
+					data-highlights='[ {"from": 40, "to": 45, "color": "rgba(200, 50, 50, .75)"} ]'
 					data-color-numbers="#fff" data-color-plate="#000" data-border-shadow-width="0" data-borders="false"
-					data-needle-type="arrow" data-needle-width="3" data-needle-circle-size="15"
+					data-needle-type="arrow" data-needle-width="3" data-needle-circle-size="10"
 					data-needle-circle-outer="true" data-needle-circle-inner="false" data-animation-duration="1500"
 					data-animation-rule="linear" data-bar-width="5" data-stroke-ticks="true" data-ticks-width="15"
-					data-ticks-width-minor="7.5" data-color-bar-progress="#327ac0" data-color-bar="#f5f5f5"></canvas>
+					data-ticks-width-minor="7.5" data-color-bar-progress="#327ac0" data-color-bar="#f5f5f5" data-value="20"></canvas>
 			</div>
 			<div class="col-sm-5 py-3 align-items-center">
 				<canvas id="heading" data-type="radial-gauge" data-height="220" data-min-value="0" data-max-value="360"
@@ -138,7 +138,7 @@
 				.then((data) => document.getElementById("temperature").setAttribute("data-value", data.temperature.substr(0, data.temperature.length - 1)));
 		}
 		function showPosition(position) {
-			document.getElementById("velocity").setAttribute("data-value", position.coords.speed);
+			document.getElementById("velocity").setAttribute("data-value", Math.round(position.coords.speed * 1.609 * 2 * 100) / 100);
 			document.getElementById("heading").setAttribute("data-value", position.coords.heading);
 			loadWeather(position);
 		}
